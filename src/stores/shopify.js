@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const SHOPIFY_DOMAIN = process.env.SHOPIFY_DOMAIN
-const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+const SHOPIFY_DOMAIN = import.meta.env.VITE_SHOPIFY_DOMAIN
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN
 
 
 const api = axios.create({
