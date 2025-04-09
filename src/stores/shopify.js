@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const SHOPIFY_DOMAIN = 'finalclubties.myshopify.com'
-const ACCESS_TOKEN = '57c42a3a1f063563c5d26d8b375b9b1e'
+const SHOPIFY_DOMAIN = process.env.SHOPIFY_DOMAIN
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN
 
 
 const api = axios.create({
