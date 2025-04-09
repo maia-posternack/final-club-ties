@@ -1,23 +1,19 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <h1 class="text-4xl font-bold text-red-500">Hello Tailwind</h1>
+  <div>
+    <h1>My Shopify Store</h1>
+    <ProductList />
+    <Cart />
+  </div>
 </template>
 
+<script setup>
+import ProductList from './components/ProductList.vue'
+import Cart from './components/Cart.vue'
+</script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style>
+body {
+  font-family: sans-serif;
+  padding: 2rem;
 }
 </style>
