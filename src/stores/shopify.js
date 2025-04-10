@@ -77,6 +77,43 @@ export const useShopifyStore = defineStore('shopify', {
       this.cartId = res.data.data.cartCreate.cart.id
       this.checkoutUrl = res.data.data.cartCreate.cart.checkoutUrl
     },
+    async fetchProductByHandle(handle) {
+      const query = `
+        {
+          productByHandle(handle: "${handle}") {
+            id
+            title
+            description
+            images(first: 10) {
+              edges {
+                node {
+                  url
+                }
+              }
+            }
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  price {
+                    amount
+                  }
+                }
+              }
+            }
+          }
+        }
+      `
+      try {
+        const res = await api.post('', { query })
+        console.log( res.data.data.productByHandle)
+        return res.data.data.productByHandle
+      } catch (err) {
+        console.error(`Error fetching product by handle "${handle}":`, err)
+        return null
+      }
+    },    
 
     async addToCart(variantId, quantity = 1) {
       if (!this.cartId) await this.createCart()

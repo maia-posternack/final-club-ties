@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h1>My Shopify Store</h1>
-    <ProductList />
-    <Cart />
+    <!-- global header, nav, cart, etc. -->
+    <MiniCart />
+    <router-view />
   </div>
 </template>
 
 <script setup>
-import ProductList from './components/ProductList.vue'
-import Cart from './components/Cart.vue'
+import MiniCart from './components/MiniCart.vue' // if you made it
 </script>
 
 <style>
 body {
   font-family: sans-serif;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
 }
 </style>
