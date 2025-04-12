@@ -1,26 +1,26 @@
 <template>
 
-    <div class="products">
-      <div
-        v-for="product in store.products"
-        :key="product.id"
-        class="product-card"
-      >
-        <router-link :to="`/product/${product.handle}`">
-          <img
-            v-if="product.images.edges.length"
-            :src="product.images.edges[0].node.url"
-            alt="product image"
-            width="200"
-          />
-          <h3>{{ product.title }}</h3>
-        </router-link>
-  
-        <p>${{ product.variants.edges[0].node.price.amount }}</p>
-        <button @click="add(product)">Add to Cart</button>
-      </div>
+  <div class="products">
+    <div
+      v-for="product in store.products"
+      :key="product.id"
+      class="product-card"
+    >
+      <router-link :to="`/product/${product.handle}`">
+        <img
+          v-if="product.images.edges.length"
+          :src="product.images.edges[0].node.url"
+          alt="product image"
+          width="200"
+        />
+        <h3>{{ product.title }}</h3>
+      </router-link>
+
+      <p>${{ product.variants.edges[0].node.price.amount }}</p>
+      <button @click="add(product)">Add to Cart</button>
     </div>
-  </template>
+  </div>
+</template>
   
   <script setup>
   import { onMounted } from 'vue'

@@ -1,19 +1,25 @@
 <template>
   <div>
-    <!-- global header, nav, cart, etc. -->
-    <MiniCart />
-    <router-view />
+    <Intro v-if="showIntro" />
+    
+    <div v-else>
+      <!-- Global header, nav, cart, etc. -->
+      <MiniCart />
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script setup>
-import MiniCart from './components/MiniCart.vue' // if you made it
-</script>
+import { ref, onMounted } from 'vue'
+import MiniCart from './components/MiniCart.vue'
+import Intro from './components/Intro.vue'
 
-<style>
-body {
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-}
-</style>
+const showIntro = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    showIntro.value = false
+  }, 6000)
+})
+</script>
