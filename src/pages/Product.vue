@@ -115,7 +115,9 @@ onMounted(async () => {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+
   padding: 3rem 1.5rem;
+  color: #f4e8b5;
   font-family: "Helvetica Neue LT Std", sans-serif;
 }
 
@@ -169,8 +171,6 @@ onMounted(async () => {
 .intro-text {
   font-style: italic;
   margin-bottom: 1rem;
-  color: #f4e8b5;
-
   line-height: 1.6;
 }
 
@@ -178,8 +178,6 @@ onMounted(async () => {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  color: #f4e8b5;
-
 }
 
 .care-list {
@@ -212,7 +210,7 @@ onMounted(async () => {
 
 /* Add to cart button */
 .add-to-cart {
-  background-color: #4e0101;
+  background-color: #4e0101 !important;
   color: #f4e8b5;
   font-weight: bold;
   padding: 0.75rem 2rem;
@@ -223,22 +221,19 @@ onMounted(async () => {
 }
 
 .add-to-cart:hover {
-  background-color: #600101;
+  background-color: #600101 !important;
   transform: translateY(-2px) scale(1.03);
 }
-
 .main-page {
+  min-height: 100vh;
   background-image: url('/bg-pattern.png');
-  background-color: #7c0a02;
+  background-color: #7c0a02 !important;
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: fixed;
+  background-repeat: repeat;
   animation: bgscroll 60s linear infinite;
-
 }
-
-  
-
 .image-gallery {
   margin-top: 50px;
   display: flex;

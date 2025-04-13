@@ -76,7 +76,7 @@
     height: 100dvh;
     overflow: hidden;
     background-image: url('/bg-pattern.png'); /* ← your absurd background */
-  background-color: #7c0a02;
+  background-color: #7c0a02 !important;
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: fixed;
@@ -86,7 +86,7 @@
   .mission {
     flex: 0 0 30%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7) !important;
     font-family: 'Georgia', serif;
     top: 0;
     height: 100vh;

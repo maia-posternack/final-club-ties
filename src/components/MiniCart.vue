@@ -153,7 +153,7 @@ watch(
 }
 
 .cart-item {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05) !important;
   padding: 0.75rem;
   border-radius: 10px;
   transition: transform 0.2s;
@@ -169,7 +169,7 @@ watch(
 }
 
 .checkout-btn {
-  background-color: #f4e8b5;
+  background-color: #f4e8b5 !important;
   color: #4e0101;
   font-weight: bold;
   text-transform: uppercase;
@@ -179,7 +179,7 @@ watch(
 }
 
 .checkout-btn:hover {
-  background-color: #e5d798;
+  background-color: #e5d798 !important;
 }
 
 .cart-toggle {
@@ -207,7 +207,7 @@ watch(
   border-radius: 999px;
   padding: 0.6rem 1.2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
 .cart-toggle:hover {
