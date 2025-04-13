@@ -115,9 +115,7 @@ onMounted(async () => {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
   padding: 3rem 1.5rem;
-  color: #f4e8b5;
   font-family: "Helvetica Neue LT Std", sans-serif;
 }
 
@@ -171,6 +169,8 @@ onMounted(async () => {
 .intro-text {
   font-style: italic;
   margin-bottom: 1rem;
+  color: #f4e8b5;
+
   line-height: 1.6;
 }
 
@@ -178,6 +178,8 @@ onMounted(async () => {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  color: #f4e8b5;
+
 }
 
 .care-list {
