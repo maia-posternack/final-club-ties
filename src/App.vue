@@ -26,7 +26,7 @@ onMounted(() => {
     setTimeout(() => {
       showIntro.value = false
       sessionStorage.setItem('introSeen', 'true')
-    }, 5000)
+    }, 4000)
   }
   
 })

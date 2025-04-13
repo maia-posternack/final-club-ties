@@ -4,57 +4,48 @@
     <div class="center-wrapper">
       <router-link to="/" class="back-button">← </router-link>
 
-    <div v-if="product" class="product-page">
-      <!-- Image Column -->
-      <div class="image-gallery-grid">
-  <!-- Main Image -->
-  <img
-    :src="selectedImage"
-    alt="Selected product image"
-    class="main-image"
-  />
+      <div v-if="product" class="product-page">
+        <!-- Image Column -->
+        <div class="image-gallery-grid">
+          <!-- Main Image -->
+          <img :src="selectedImage" alt="Selected product image" class="main-image" />
 
-  <!-- Thumbnail Row -->
-  <div class="thumbnail-row">
-    <img
-      v-for="(imageEdge, index) in product.images.edges"
-      :key="index"
-      :src="imageEdge.node.url"
-      alt="Thumbnail"
-      :class="['thumbnail', { active: imageEdge.node.url === selectedImage }]"
-      @click="selectImage(imageEdge.node.url)"
-    />
-  </div>
-</div>
-
-
-      <!-- Info Column -->
-      <div class="product-info">
-        <h1>
-          <router-link to="/" >{{ product.title }}</router-link>
-
-        </h1>
-
-        <!-- Description Block -->
-        <div class="description-block">
-          <p class="intro-text">
-            <em>{{ product.description.split('Care instructions')[0].trim() }}</em>
-          </p>
-          <p class="care-label">Care instructions</p>
-          <ul class="care-list">
-            <li v-for="line in careInstructions" :key="line">- {{ line }}</li>
-          </ul>
+          <!-- Thumbnail Row -->
+          <div class="thumbnail-row">
+            <img v-for="(imageEdge, index) in product.images.edges" :key="index" :src="imageEdge.node.url"
+              alt="Thumbnail" :class="['thumbnail', { active: imageEdge.node.url === selectedImage }]"
+              @click="selectImage(imageEdge.node.url)" />
+          </div>
         </div>
 
-        <div class="product-price">
-          ${{ product.variants.edges[0].node.price.amount }}
-        </div>
 
-        <button @click="addToCart" class="add-to-cart">
-          Add to Cart
-        </button>
+        <!-- Info Column -->
+        <div class="product-info">
+          <h1>
+            <router-link to="/">{{ product.title }}</router-link>
+
+          </h1>
+
+          <!-- Description Block -->
+          <div class="description-block">
+            <p class="intro-text">
+              <em>{{ product.description.split('Care instructions')[0].trim() }}</em>
+            </p>
+            <p class="care-label">Care instructions</p>
+            <ul class="care-list">
+              <li v-for="line in careInstructions" :key="line">- {{ line }}</li>
+            </ul>
+          </div>
+
+          <div class="product-price">
+            ${{ product.variants.edges[0].node.price.amount }}
+          </div>
+
+          <button @click="addToCart" class="add-to-cart">
+            Add to Cart
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -132,7 +123,7 @@ onMounted(async () => {
 .image-gallery img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -150,7 +141,7 @@ onMounted(async () => {
   font-weight: bold;
   margin-bottom: 1rem;
   color: white;
-  text-shadow: 0 0 8px rgba(0,0,0,0.3);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .product-info h1 a {
@@ -217,13 +208,14 @@ onMounted(async () => {
   border-radius: 999px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .add-to-cart:hover {
   background-color: #600101 !important;
   transform: translateY(-2px) scale(1.03);
 }
+
 .main-page {
   min-height: 100dvh;
   background-image: url('/bg-pattern.png');
@@ -233,7 +225,8 @@ onMounted(async () => {
   background-attachment: scroll;
   background-repeat: repeat;
   animation: bgscroll 60s linear infinite;
-  transform: translateZ(0); /* ✅ hardware-accelerated paint */
+  transform: translateZ(0);
+  overflow: hidden;
 }
 
 .image-gallery {
@@ -244,20 +237,24 @@ onMounted(async () => {
   overflow-x: auto;
   max-width: 100%;
   padding-bottom: 0.5rem;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
+
 .image-gallery img {
   flex: 0 0 auto;
   height: 300px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
 .image-gallery img:hover {
   transform: scale(1.05) rotate(-1deg);
 }
+
 .image-gallery-grid {
   display: flex;
   flex-direction: column;
@@ -268,12 +265,12 @@ onMounted(async () => {
 
 
 .main-image {
-  margin-top:10px;
+  margin-top: 10px;
   width: 100%;
   height: auto;
   max-height: 500px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -291,7 +288,7 @@ onMounted(async () => {
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.2s, transform 0.2s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .thumbnail:hover {
@@ -309,11 +306,13 @@ onMounted(async () => {
   justify-content: center;
   width: 100%;
 }
+
 .thumbnail-row {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
+
 .back-button {
   display: inline-block;
   margin-bottom: 1rem;
@@ -329,6 +328,7 @@ onMounted(async () => {
 .back-button:hover {
   color: #f4e8b5;
 }
+
 @media (max-width: 768px) {
   .product-page {
     flex-direction: column;
@@ -353,16 +353,17 @@ onMounted(async () => {
   .thumbnail {
     width: 80px;
   }
- 
-  .back-button{
+
+  .back-button {
     margin-left: 2rem;
   }
-  .product-page{
+
+  .product-page {
     margin-top: 2rem;
     transform: translateX(-30px)
-
   }
-  .main-page{
+
+  .main-page {
     background-image: url('/bg-pattern.png');
     background-color: #7c0a02 !important;
     background-blend-mode: multiply;
@@ -370,6 +371,11 @@ onMounted(async () => {
     background-attachment: scroll;
     background-repeat: repeat;
     animation: bgscroll 60s linear infinite;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .main-page {
+    background-blend-mode: normal;
   }
 }
 
