@@ -75,8 +75,10 @@ export const useShopifyStore = defineStore('shopify', {
       `
       const res = await api.post('', { query })
       this.cartId = res.data.data.cartCreate.cart.id
-      this.checkoutUrl = res.data.data.cartCreate.cart.checkoutUrl
+      const rawUrl = res.data.data.cartCreate.cart.checkoutUrl
+      this.checkoutUrl = `${rawUrl}?return_to=https://finalclubties.com`
     },
+    
     async fetchProductByHandle(handle) {
       const query = `
         {
@@ -118,7 +120,7 @@ export const useShopifyStore = defineStore('shopify', {
     async addToCart(variantId, quantity = 1) {
       if (!this.cartId) await this.createCart()
 
-      const query = `
+        const query = `
         mutation {
           cartLinesAdd(
             cartId: "${this.cartId}", 
@@ -136,9 +138,21 @@ export const useShopifyStore = defineStore('shopify', {
                       ... on ProductVariant {
                         id
                         title
+                        image {
+                          url
+                        }
+                        price {
+                          amount
+                        }
+                        product {
+                          title
+                        }
                       }
                     }
                   }
+                }
+                pageInfo {
+                  hasNextPage
                 }
               }
               checkoutUrl
@@ -146,6 +160,7 @@ export const useShopifyStore = defineStore('shopify', {
           }
         }
       `
+      
       const res = await api.post('', { query })
       console.log('Shopify response:', res.data)
       this.cartItems = res.data.data.cartLinesAdd.cart.lines.edges

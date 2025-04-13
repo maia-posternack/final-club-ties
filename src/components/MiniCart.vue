@@ -13,9 +13,10 @@
           <div v-for="item in store.cartItems" :key="item.node.merchandise.id" class="mb-2 flex">
             <img :src="preview(item)" class="w-12 h-12 object-cover rounded mr-2" />
             <div>
-              <div>{{ item.node.merchandise.title }}</div>
-              <div class="text-sm text-gray-600">Qty: {{ item.node.quantity }}</div>
-            </div>
+              <div class="font-semibold">{{ item.node.merchandise.product.title }}</div>
+<div class="text-sm text-gray-700">${{ item.node.merchandise.price.amount }}</div>
+<div class="text-xs text-gray-500">Qty: {{ item.node.quantity }}</div>
+ </div>
           </div>
           <button
             @click="checkout"
@@ -34,6 +35,8 @@
   
   const store = useShopifyStore()
   const open = ref(false)
+
+
   
   const total = computed(() =>
     store.cartItems.reduce((sum, item) => sum + item.node.quantity, 0)

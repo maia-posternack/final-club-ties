@@ -20,6 +20,6 @@ const showIntro = ref(true)
 onMounted(() => {
   setTimeout(() => {
     showIntro.value = false
-  }, 6000)
+  }, 5000)
 })
 </script>
