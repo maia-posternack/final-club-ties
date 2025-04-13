@@ -225,15 +225,17 @@ onMounted(async () => {
   transform: translateY(-2px) scale(1.03);
 }
 .main-page {
-  min-height: 100vh;
+  min-height: 100dvh;
   background-image: url('/bg-pattern.png');
-  background-color: #7c0a02 !important;
+  background-color: #7c0a02;
   background-blend-mode: multiply;
   background-size: 600px auto;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: repeat;
   animation: bgscroll 60s linear infinite;
+  transform: translateZ(0); /* ✅ hardware-accelerated paint */
 }
+
 .image-gallery {
   margin-top: 50px;
   display: flex;
@@ -359,6 +361,15 @@ onMounted(async () => {
     margin-top: 2rem;
     transform: translateX(-30px)
 
+  }
+  .main-page{
+    background-image: url('/bg-pattern.png');
+    background-color: #7c0a02 !important;
+    background-blend-mode: multiply;
+    background-size: 600px auto;
+    background-attachment: scroll;
+    background-repeat: repeat;
+    animation: bgscroll 60s linear infinite;
   }
 }
 
