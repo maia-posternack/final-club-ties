@@ -22,18 +22,13 @@ onMounted(() => {
   const introSeen = sessionStorage.getItem('introSeen')
 
   if (!introSeen) {
-   
-setTimeout(() => {
-  showIntro.value = false;
-
-  // force repaint
-  document.body.style.display = 'none';
-  setTimeout(() => {
-    document.body.style.display = '';
-  }, 10);
-}, 5000);
-
+    showIntro.value = true
+    setTimeout(() => {
+      showIntro.value = false
+      sessionStorage.setItem('introSeen', 'true')
+    }, 5000)
   }
+  
 })
 
 </script>
