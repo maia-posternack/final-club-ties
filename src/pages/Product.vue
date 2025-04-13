@@ -224,16 +224,17 @@ onMounted(async () => {
   background-color: #600101;
   transform: translateY(-2px) scale(1.03);
 }
+
 .main-page {
-  min-height: 100vh;
   background-image: url('/bg-pattern.png');
   background-color: #7c0a02;
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: fixed;
-  background-repeat: repeat;
   animation: bgscroll 60s linear infinite;
 }
+
+
 .image-gallery {
   margin-top: 50px;
   display: flex;
