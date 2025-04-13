@@ -15,11 +15,18 @@ import { ref, onMounted } from 'vue'
 import MiniCart from './components/MiniCart.vue'
 import Intro from './components/Intro.vue'
 
-const showIntro = ref(true)
+const showIntro = ref(false)
 
 onMounted(() => {
-  setTimeout(() => {
-    showIntro.value = false
-  }, 5000)
+  // Show intro only if it hasn't been shown yet
+  const introSeen = sessionStorage.getItem('introSeen')
+
+  if (!introSeen) {
+    showIntro.value = true
+    setTimeout(() => {
+      showIntro.value = false
+      sessionStorage.setItem('introSeen', 'true')
+    }, 5000)
+  }
 })
 </script>

@@ -1,7 +1,9 @@
 <template>
     <div v-if="product" class="max-w-4xl mx-auto p-8">
       <!-- Product Title -->
-      <h1 class="text-3xl font-bold mb-4">{{ product.title }}</h1>
+      <h1 class="text-3xl font-bold mb-4">
+        <a href="/">{{ product.title }}</a>
+      </h1>
   
       <!-- Scrollable Image Gallery -->
       <div class="flex gap-4 overflow-x-auto mb-6">
