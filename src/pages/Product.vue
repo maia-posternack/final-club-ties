@@ -232,8 +232,10 @@ onMounted(async () => {
   background-size: 600px auto;
   background-attachment: fixed;
   animation: bgscroll 60s linear infinite;
+
 }
 
+  
 
 .image-gallery {
   margin-top: 50px;

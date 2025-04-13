@@ -73,10 +73,14 @@
   <style scoped>
   .main-page {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background-image: url('/bg-pattern.png'); /* ← your absurd background */
-    background-size: cover;
+  background-color: #7c0a02;
+  background-blend-mode: multiply;
+  background-size: 600px auto;
+  background-attachment: fixed;
+  animation: bgscroll 60s linear infinite;
   }
   
   .mission {
@@ -190,14 +194,7 @@
 .animate-flicker {
   animation: flicker 4s infinite;
 }
-.main-page {
-  background-image: url('/bg-pattern.png');
-  background-color: #7c0a02;
-  background-blend-mode: multiply;
-  background-size: 600px auto;
-  background-attachment: fixed;
-  animation: bgscroll 60s linear infinite;
-}
+
 
 
 .mission-text {
