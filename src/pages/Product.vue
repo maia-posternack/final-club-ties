@@ -327,5 +327,39 @@ onMounted(async () => {
 .back-button:hover {
   color: #f4e8b5;
 }
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .image-gallery-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-image {
+    max-height: 300px;
+  }
+
+  .thumbnail-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .thumbnail {
+    width: 80px;
+  }
+ 
+  .back-button{
+    margin-left: 2rem;
+  }
+  .product-page{
+    margin-top: 2rem;
+    transform: translateX(-30px)
+
+  }
+}
 
 </style>
