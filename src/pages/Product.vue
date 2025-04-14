@@ -5,6 +5,8 @@
       <router-link to="/" class="back-button">← </router-link>
 
       <div v-if="product" class="product-page">
+          <!-- NEW WRAPPER -->
+  <div class="product-content"> 
         <!-- Image Column -->
         <div class="image-gallery-grid">
           <!-- Main Image -->
@@ -45,6 +47,7 @@
             Add to Cart
           </button>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -330,8 +333,18 @@ onMounted(async () => {
   color: #f4e8b5;
 }
 
+.product-content {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+}
 
 @media (max-width: 768px) {
+  .product-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 </style>
