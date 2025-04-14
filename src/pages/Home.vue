@@ -7,7 +7,7 @@
         <h1 class="statement-text">
           Got cut from the Spee? <br />
           Well, I have the solution for you. <br />
-          Delivered in 3–5 business days.
+          Delivered to your door in 3–5 business days for the low, low price of $9.99
         </h1>
       </div>
 
@@ -124,35 +124,6 @@ function add(product) {
   background: #222;
 }
 
-@media (max-width: 768px) {
-  .main-page {
-    flex-direction: column;
-    overflow: auto;
-  }
-
-  .mission-text {
-    padding: 0rem 3rem 0rem 3rem;
-  }
-
-
-  .product-scroll {
-    flex-direction: column;
-    overflow-x: hidden;
-    padding: 1.5rem;
-  }
-
-  .product-card {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .mission-logo {
-    width: 100px;
-    display: block;
-    margin: 0 auto;
-  }
-}
 
 @keyframes float {
 
@@ -362,6 +333,43 @@ function add(product) {
 .mission-logo {
   width: 200px;
 
+
+}
+@media (max-width: 768px) {
+  .main-page {
+    flex-direction: column;
+    overflow: auto;
+    padding-left: 1rem;
+    padding-right: 1rem
+
+  }
+  .statement-text {
+    font-size: 1.3rem;
+   
+  }
+
+  .mission-text {
+    padding: 0rem 3rem 0rem 3rem;
+  }
+
+
+  .product-scroll {
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 1.5rem;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .mission-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
 
 }
 </style>
