@@ -5,50 +5,44 @@
       <router-link to="/" class="back-button">← </router-link>
 
       <div v-if="product" class="product-page">
-          <!-- NEW WRAPPER -->
-  <div class="product-content"> 
-        <!-- Image Column -->
-        <div class="image-gallery-grid">
-          <!-- Main Image -->
-          <img :src="selectedImage" alt="Selected product image" class="main-image" />
-
-          <!-- Thumbnail Row -->
-          <div class="thumbnail-row">
-            <img v-for="(imageEdge, index) in product.images.edges" :key="index" :src="imageEdge.node.url"
-              alt="Thumbnail" :class="['thumbnail', { active: imageEdge.node.url === selectedImage }]"
-              @click="selectImage(imageEdge.node.url)" />
-          </div>
-        </div>
-
-
-        <!-- Info Column -->
-        <div class="product-info">
-          <h1>
-            <router-link to="/">{{ product.title }}</router-link>
-
-          </h1>
-
-          <!-- Description Block -->
-          <div class="description-block">
-            <p class="intro-text">
-              <em>{{ product.description.split('Care instructions')[0].trim() }}</em>
-            </p>
-            <p class="care-label">Care instructions</p>
-            <ul class="care-list">
-              <li v-for="line in careInstructions" :key="line">- {{ line }}</li>
-            </ul>
-          </div>
-
-          <div class="product-price">
-            ${{ product.variants.edges[0].node.price.amount }}
-          </div>
-
-          <button @click="addToCart" class="add-to-cart">
-            Add to Cart
-          </button>
-        </div>
+  <!-- Stacked wrapper by default -->
+  <div class="product-content">
+    <div class="image-gallery-grid">
+      <img :src="selectedImage" alt="Selected product image" class="main-image" />
+      <div class="thumbnail-row">
+        <img
+          v-for="(imageEdge, index) in product.images.edges"
+          :key="index"
+          :src="imageEdge.node.url"
+          alt="Thumbnail"
+          :class="['thumbnail', { active: imageEdge.node.url === selectedImage }]"
+          @click="selectImage(imageEdge.node.url)"
+        />
       </div>
+    </div>
+
+    <div class="product-info">
+      <h1><router-link to="/">{{ product.title }}</router-link></h1>
+
+      <div class="description-block">
+        <p class="intro-text">
+          <em>{{ product.description.split('Care instructions')[0].trim() }}</em>
+        </p>
+        <p class="care-label">Care instructions</p>
+        <ul class="care-list">
+          <li v-for="line in careInstructions" :key="line">- {{ line }}</li>
+        </ul>
       </div>
+
+      <div class="product-price">
+        ${{ product.variants.edges[0].node.price.amount }}
+      </div>
+
+      <button @click="addToCart" class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 </template>
@@ -339,8 +333,89 @@ onMounted(async () => {
   gap: 3rem;
 }
 
-@media (max-width: 768px) {
- 
+.product-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  color: #f4e8b5;
+  font-family: "Helvetica Neue LT Std", sans-serif;
 }
+
+/* Make layout stacked by default */
+.product-content {
+  display: block;
+}
+
+/* Images */
+.image-gallery-grid {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border: 2px solid #ffd700;
+}
+
+/* Info block stays below unless we override on desktop */
+.product-info {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Responsive override for large screens */
+@media (min-width: 1024px) {
+  .product-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .image-gallery-grid {
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .product-info {
+    margin: 0;
+  }
+}
+
 
 </style>
