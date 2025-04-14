@@ -330,7 +330,7 @@ onMounted(async () => {
   color: #f4e8b5;
 }
 
-/*
+
 @media (max-width: 768px) {
   .product-page {
     flex-direction: column;
@@ -344,7 +344,7 @@ onMounted(async () => {
     width: 100%;
     max-width: 100%;
   }
-
+/*
   .main-image {
     max-height: 300px;
   }
@@ -379,5 +379,6 @@ onMounted(async () => {
     background-blend-mode: normal;
   }
 }*/
+}
 
 </style>
