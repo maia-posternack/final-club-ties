@@ -218,8 +218,7 @@ onMounted(async () => {
 
 .main-page {
   min-height: 100dvh;
-  background-image: url('/bg-pattern.png');
-  background-color: #7c0a02 ;
+  background-image: url('/bg-pattern-darker.png');
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: scroll;
@@ -332,6 +331,53 @@ onMounted(async () => {
 
 
 @media (max-width: 768px) {
+  
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    transform: translateX(-30px)
+  }
+
+
+  .image-gallery-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-image {
+    max-height: 300px;
+  }
+
+  .thumbnail-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .thumbnail {
+    width: 80px;
+  }
+
+  .back-button {
+    margin-left: 2rem;
+  }
+
+  
+
+  .main-page {
+    background-image: url('/bg-pattern-darker.png');
+    background-size: 600px auto;
+    background-attachment: scroll;
+    background-repeat: repeat;
+    animation: bgscroll 60s linear infinite;
+  }
 }
+@supports (-webkit-touch-callout: none) {
+  .main-page {
+    background-blend-mode: normal;
+  }
+}
+
 
 </style>
