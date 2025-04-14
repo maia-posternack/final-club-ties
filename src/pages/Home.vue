@@ -64,7 +64,7 @@ function add(product) {
   display: flex;
   height: 100dvh;
   overflow: hidden;
-  background-image: url('/bg-pattern-dark.png');
+  background-image: url('/bg-pattern-darker.png');
   background-size: 600px auto;
   background-attachment: fixed;
   animation: bgscroll 60s linear infinite;
