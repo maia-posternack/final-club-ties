@@ -5,8 +5,7 @@
       <div class="mission-text scroll-card">
         <img src="/logo-yellow.png" alt="Logo" class="mission-logo" />
         <h1 class="statement-text">
-          Got cut from the Spee? <br />
-          Well, I have the solution for you. <br />
+          Do you hate yourself? Like real bad? <br />
           Delivered to your door in 3–5 business days for the low, low price of $9.99
         </h1>
       </div>
