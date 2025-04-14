@@ -65,7 +65,7 @@ function add(product) {
   height: 100dvh;
   overflow: hidden;
   background-image: url('/bg-pattern-darker.png');
-  background-color: #7c0a02 ;
+  background-color: #7c0a02 !important;
   background-size: 600px auto;
   background-attachment: fixed;
   animation: bgscroll 60s linear infinite;
