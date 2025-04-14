@@ -341,10 +341,7 @@ onMounted(async () => {
 }
 
 @media (max-width: 768px) {
-  .product-content {
-    flex-direction: column;
-    align-items: center;
-  }
+ 
 }
 
 </style>
