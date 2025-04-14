@@ -200,6 +200,7 @@ function add(product) {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   flex: 0 0 auto;
   scroll-snap-align: center;
+  transform: translateY(-20px);
 }
 
 .statement-text {
