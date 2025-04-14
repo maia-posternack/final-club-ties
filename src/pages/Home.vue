@@ -31,7 +31,7 @@
   </div>
   <div class="worthy-banner-wrapper">
     <div class="worthy-banner-track">
-      <span v-for="i in 50" :key="i" class="worthy-text">YOU ARE WORTHY. </span>
+      <span v-for="i in 50" :key="i" class="worthy-text">YOU ARE ENOUGH. </span>
     </div>
   </div>
 
