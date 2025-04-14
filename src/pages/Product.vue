@@ -403,14 +403,7 @@ onMounted(async () => {
 @media (min-width: 1024px) {
 
 
-  .image-gallery-grid {
-    max-width: 400px;
-    margin: 0;
-  }
 
-  .product-info {
-    margin: 0;
-  }
 }
 
 
