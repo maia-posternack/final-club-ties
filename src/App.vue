@@ -48,5 +48,10 @@ html, body {
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
 }
+body {
+  overscroll-behavior-y: none;
+  scroll-behavior: smooth;
+}
+
 </style>
 
