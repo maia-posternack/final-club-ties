@@ -401,11 +401,7 @@ onMounted(async () => {
 
 /* Responsive override for large screens */
 @media (min-width: 1024px) {
-  .product-content {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-  }
+
 
   .image-gallery-grid {
     max-width: 400px;
