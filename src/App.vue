@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="app-wrapper">
+    
     <Intro v-if="showIntro" />
     
     <div v-else>
@@ -32,3 +33,20 @@ onMounted(() => {
 })
 
 </script>
+<style>
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.app-wrapper {
+
+  /* Safe area padding for iOS */
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}
+</style>
+
