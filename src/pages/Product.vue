@@ -332,14 +332,16 @@ onMounted(async () => {
 
 
 @media (max-width: 768px) {
+  /*
   .product-page {
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
     margin-top: 2rem;
-  }
+    transform: translateX(-30px)
+  }*/
 
-/*
+
   .image-gallery-grid {
     width: 100%;
     max-width: 100%;
@@ -378,7 +380,7 @@ onMounted(async () => {
   .main-page {
     background-blend-mode: normal;
   }
-}*/
 }
+
 
 </style>
