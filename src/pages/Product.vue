@@ -337,14 +337,14 @@ onMounted(async () => {
     align-items: center;
     padding: 2rem 1rem;
     margin-top: 2rem;
-    transform: translateX(-30px)
   }
 
+/*
   .image-gallery-grid {
     width: 100%;
     max-width: 100%;
   }
-/*
+
   .main-image {
     max-height: 300px;
   }
