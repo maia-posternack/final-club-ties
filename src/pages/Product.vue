@@ -334,14 +334,15 @@ onMounted(async () => {
 }
 
 .product-content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: flex-start;
 }
 
 @media (max-width: 768px) {
- 
+  .product-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 </style>
