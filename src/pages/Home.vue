@@ -6,6 +6,7 @@
         <img src="/logo-yellow.png" alt="Logo" class="mission-logo" />
         <h1 class="statement-text">
           Do you hate yourself? Like real bad? <br />
+          Well I have the solution for you <br />
           Delivered to your door in 3–5 business days for the low, low price of $9.99
         </h1>
       </div>
@@ -344,7 +345,7 @@ function add(product) {
 
   }
   .statement-text {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
    
   }
 
