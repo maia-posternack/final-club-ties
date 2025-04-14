@@ -219,7 +219,7 @@ onMounted(async () => {
 .main-page {
   min-height: 100dvh;
   background-image: url('/bg-pattern.png');
-  background-color: #7c0a02 !important;
+  background-color: #7c0a02 ;
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: scroll;
