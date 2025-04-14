@@ -340,9 +340,7 @@ onMounted(async () => {
 }
 
 @media (max-width: 768px) {
-  .product-content {
-    grid-template-columns: 1fr;
-  }
+ 
 }
 
 </style>
