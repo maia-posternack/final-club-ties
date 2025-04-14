@@ -219,7 +219,7 @@ onMounted(async () => {
 .main-page {
   min-height: 100dvh;
   background-image: url('/bg-pattern.png');
-  background-color: #7c0a02;
+  background-color: #7c0a02 !important;
   background-blend-mode: multiply;
   background-size: 600px auto;
   background-attachment: scroll;
@@ -227,6 +227,7 @@ onMounted(async () => {
   animation: bgscroll 60s linear infinite;
   transform: translateZ(0);
   overflow: hidden;
+
 }
 
 .image-gallery {
@@ -329,11 +330,14 @@ onMounted(async () => {
   color: #f4e8b5;
 }
 
+/*
 @media (max-width: 768px) {
   .product-page {
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
+    margin-top: 2rem;
+    transform: translateX(-30px)
   }
 
   .image-gallery-grid {
@@ -358,10 +362,7 @@ onMounted(async () => {
     margin-left: 2rem;
   }
 
-  .product-page {
-    margin-top: 2rem;
-    transform: translateX(-30px)
-  }
+  
 
   .main-page {
     background-image: url('/bg-pattern.png');
@@ -377,6 +378,6 @@ onMounted(async () => {
   .main-page {
     background-blend-mode: normal;
   }
-}
+}*/
 
 </style>
