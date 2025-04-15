@@ -1,5 +1,5 @@
 <template>
-  <div class="app-wrapper">
+<div :class="['app-wrapper', { 'intro-active': showIntro }]">
     
     <Intro v-if="showIntro" />
     
@@ -27,7 +27,7 @@ onMounted(() => {
     setTimeout(() => {
       showIntro.value = false
       sessionStorage.setItem('introSeen', 'true')
-    }, 4000)
+    }, 3000)
   }
   
 })
@@ -52,6 +52,14 @@ body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
 }
+.app-wrapper.intro-active {
+  background-color: #EE2222;
+}
+
+.app-wrapper:not(.intro-active) {
+  background-color: transparent;  
+}
+
 
 </style>
 
