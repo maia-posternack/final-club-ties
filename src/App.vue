@@ -22,11 +22,19 @@ onMounted(() => {
   // Show intro only if it hasn't been shown yet
   const introSeen = sessionStorage.getItem('introSeen')
 
+
   if (!introSeen) {
     showIntro.value = true
     setTimeout(() => {
       showIntro.value = false
       sessionStorage.setItem('introSeen', 'true')
+
+      // 🔧 Force iOS to repaint the safe area
+      setTimeout(() => {
+        window.scrollTo(0, 1)
+        window.scrollTo(0, 0)
+      }, 50)
+
     }, 3000)
   }
   
